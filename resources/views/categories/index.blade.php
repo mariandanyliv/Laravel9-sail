@@ -9,19 +9,19 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ route('categories.create') }}">Add new category</a>
+                    <a class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150" href="{{ route('categories.create') }}">Add new category</a>
+                    <br>
                     <table>
                         <tableh>
                             <tr>
                                 <th>Name</th>
-                                <th></th>
                             </tr>
                         </tableh>
                         <tbogy>
                             @foreach($categories as $category)
                                 <tr>
                                     <td>{{ $category->name }}</td>
-                                    <td><a href="{{ route('categories.edit', $category) }}">Edit</a>
+                                    <td> <a class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150" href="{{ route('categories.edit', $category) }}">Edit</a>
                                         <form method="POST" action="{{ route('categories.destroy', $category) }}">
                                             @csrf
                                             @method('DELETE')
